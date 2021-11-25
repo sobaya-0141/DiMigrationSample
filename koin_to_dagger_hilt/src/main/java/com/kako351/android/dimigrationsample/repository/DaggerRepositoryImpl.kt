@@ -4,9 +4,7 @@ import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class DaggerRepositoryImpl : DaggerRepository {
-    @Inject constructor(@ApplicationContext context: Context)
-    constructor()
+class DaggerRepositoryImpl @Inject constructor(@ApplicationContext context: Context) : DaggerRepository {
 
     override val text: String
         get() = "DaggerRepository"

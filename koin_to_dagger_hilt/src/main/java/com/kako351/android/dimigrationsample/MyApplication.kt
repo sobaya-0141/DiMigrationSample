@@ -14,7 +14,7 @@ import org.koin.dsl.module
 class MyApplication : Application(){
     private val appModule = module {
         single { KoinRepository() }
-        single { DaggerRepositoryImpl() }
+        single { DaggerRepositoryImpl(get()) }
         viewModel { MainViewModel(get()) }
     }
 
