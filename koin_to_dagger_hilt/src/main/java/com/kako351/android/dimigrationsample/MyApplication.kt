@@ -41,10 +41,8 @@ class KoinTest
 class HiltTestTwo @Inject constructor()
 
 @Singleton
-class HiltTest @Inject constructor() : KoinComponent {
+class HiltTest @Inject constructor(private val hiltTestTwo: HiltTestTwo) : KoinComponent {
     private val test: KoinTest by inject()
-    @Inject
-    lateinit var hiltTestTwo: HiltTestTwo
 
     init {
         test.toString()
