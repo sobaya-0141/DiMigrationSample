@@ -10,8 +10,18 @@ import org.koin.core.inject
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val daggerRepository: DaggerRepository): ViewModel(), KoinComponent {
+class MainViewModel @Inject constructor(
+    private val daggerRepository: DaggerRepository,
+    private val hiltTest: HiltTest
+): ViewModel(), KoinComponent {
     private val koinRepository: KoinRepository by inject()
+    private val koinTest: KoinTest by inject()
 
     val text = MutableLiveData(daggerRepository.text)
+
+    init {
+        koinTest.toString()
+        hiltTest.toString()
+    }
 }
+
